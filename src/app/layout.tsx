@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { TelegramProvider, useTelegram } from '@/components/TelegramContext';
 import { GlobalContextProvider } from '@/components/RainbowKitProvider';
+import { Web3Modal } from '@/components/Web3ModalProvider';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,7 +18,9 @@ export default function RootLayout({
     <html lang='en'>
       <body>
         <GlobalContextProvider>
-          <TelegramProvider>{children}</TelegramProvider>
+          <Web3Modal>
+            <TelegramProvider>{children}</TelegramProvider>
+          </Web3Modal>
         </GlobalContextProvider>
       </body>
     </html>
