@@ -1,5 +1,6 @@
 'use client';
 
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useTelegram } from '@/components/TelegramContext';
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
 
   return (
     <div>
+      <ConnectButton />
       {user ? (
         <div>
           <h1>Welcome {user?.username}</h1>
