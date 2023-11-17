@@ -4,8 +4,15 @@ import '@rainbow-me/rainbowkit/styles.css';
 import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { configureChains, createConfig, sepolia, WagmiConfig } from 'wagmi';
 import { publicProvider } from 'wagmi/providers/public';
+import { alchemyProvider } from 'wagmi/providers/alchemy';
 
-const { chains, publicClient } = configureChains([sepolia], [publicProvider()]);
+const { chains, publicClient } = configureChains(
+  [sepolia],
+  [
+    alchemyProvider({ apiKey: 'rbWV-6I6HBp9ZDs21kVqV1BsPhaZ6FAX' }),
+    publicProvider(),
+  ]
+);
 
 const { connectors } = getDefaultWallets({
   appName: 'My RainbowKit App',
