@@ -16,9 +16,9 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body>
-        <Web3Modal>
-          <TelegramProvider>{children}</TelegramProvider>
-        </Web3Modal>
+        <TelegramProvider>
+          <Web3Modal>{children}</Web3Modal>
+        </TelegramProvider>
       </body>
     </html>
   );
