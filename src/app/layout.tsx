@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { TelegramProvider, useTelegram } from '@/components/TelegramContext';
-import { GlobalContextProvider } from '@/components/RainbowKitProvider';
+import { TelegramProvider } from '@/components/TelegramContext';
 import { Web3Modal } from '@/components/Web3ModalProvider';
 
 export const metadata: Metadata = {
@@ -17,11 +16,9 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body>
-        <GlobalContextProvider>
-          <Web3Modal>
-            <TelegramProvider>{children}</TelegramProvider>
-          </Web3Modal>
-        </GlobalContextProvider>
+        <Web3Modal>
+          <TelegramProvider>{children}</TelegramProvider>
+        </Web3Modal>
       </body>
     </html>
   );
